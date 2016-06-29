@@ -1,3 +1,5 @@
+# RemoveOldFiles
+# This powershell script was created to purge files from a folder that are older than a specific date. The script will automatically remove files and also write a log of which files it deleted to a file in the same location.
 Function GetChildFilesOlderThan
 {
     Param ([string]$path, [int]$days = 0, [string]$name)
