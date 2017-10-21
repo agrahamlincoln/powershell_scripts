@@ -28,9 +28,11 @@ Function PrePendFile
     Add-Content -Path $path -Value $oldContent
 }
 
-$FilePath = "F:\NGProd Backup\Transaction Log"
-$MaxFileAge = -60
-$FileName = "NGProd_backup_*"
+# Path where files are to be pruned
+$FilePath = ""
+$FileName = "" # supports wildcards (i.e. '*-backup.tar.gz')
+$MaxFileAge = # negative days (i.e. -60)
+
 $OldFiles = GetChildFilesOlderThan $FilePath $MaxFileAge $FileName
 
 if ($OldFiles.Count -gt 0)
